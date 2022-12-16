@@ -1,0 +1,88 @@
+\begin{thebibliography}{}
+
+\bibitem[4411, 2022]{4411}
+4411 (2022).
+\newblock {Betaal je mobiliteit met één app}.
+\newblock [Online]. Last accessed on 11/11/2022. Retrieved from
+  \url{https://4411.io/nl-be/}.
+
+\bibitem[Chakon, 2017]{gunicorn}
+Chakon, O. (2017).
+\newblock {Deploy Django app with Nginx, Gunicorn, PostgreSQL \& Supervisor}.
+\newblock [Online]. Last accessed on 23/10/2022. Retrieved from
+  \url{https://hackernoon.com/deploy-django-app-with-nginx-gunicorn-postgresql-supervisor-9c6d556a25ac}.
+
+\bibitem[{Computer Hope}, 2020]{bit-cpu}
+{Computer Hope} (2020).
+\newblock {What is the difference between a 32-bit and 64-bit CPU?}
+\newblock [Online]. Last accessed on 24/10/2022. Retrieved form
+  \url{https://www.computerhope.com/issues/ch001498.html}.
+
+\bibitem[Decker and Hughes, 2022]{project_description}
+Decker, B.~D. and Hughes, D. (2022).
+\newblock {Groepsopdracht voor het vak Probleemoplossen en Ontwerpen}.
+
+\bibitem[Django, 2022]{django_website}
+Django (2022).
+\newblock {About the Django Software Foundation}.
+\newblock [Online]. Last accessed on 22/10/2022. Retrieved from
+  \url{https://www.djangoproject.com/foundation/}.
+
+\bibitem[Docker, 2022]{docker-compose}
+Docker (2022).
+\newblock {Key features of Docker Compose}.
+\newblock [Online]. Last accessed on 23/10/2022. Retrieved from
+  \url{https://docs.docker.com/compose/features-uses/}.
+
+\bibitem[Google, 2022]{googlevision}
+Google (2022).
+\newblock {Vision AI}.
+\newblock [Online]. Last accesed on 26/10/2022. Retrieved from
+  \url{https://cloud.google.com/vision/}.
+
+\bibitem[Gupta, 2022]{rest_apis}
+Gupta, L. (2022).
+\newblock {What is JSON?}
+\newblock [Online]. Last accessed on 11/11/2022. Retrieved from
+  \url{https://restfulapi.net/introduction-to-json/}.
+
+\bibitem[IBM, 2022]{injection_attacks}
+IBM (2022).
+\newblock {Injection attacks}.
+\newblock [Online]. Last accessed on 14/12/2022. Retrieved from
+  \url{https://www.ibm.com/docs/en/snips/4.6.0?topic=categories-injection-attacks}.
+
+\bibitem[JaidedAI, 2022]{easyocr}
+JaidedAI (2022).
+\newblock Jaidedai/easyocr: Ready-to-use ocr with 80+ supported languages and
+  all popular writing scripts including latin, chinese, arabic, devanagari,
+  cyrillic and etc..
+\newblock [Online GitHub Repository]. Last accessed on 26/10/2022. Retrieved
+  form \url{https://github.com/JaidedAI/EasyOCR}.
+
+\bibitem[{Nginx}, 2022]{nginx}
+{Nginx} (2022).
+\newblock {About Nginx}.
+\newblock [Online]. Last accessed on 23/10/2022. Retrieved from
+  \url{https://nginx.org/}.
+
+\bibitem[Rosebrock, 2022]{anpr}
+Rosebrock, A. (2022).
+\newblock {OpenCV: Automatic License/Number Plate Recognition (ANPR) with
+  python}.
+\newblock [Online]. Last accessed on 26/10/2022. Retrieved from
+  \url{https://pyimagesearch.com/2020/09/21/opencv-automatic-license-number-plate-recognition-anpr-with-python/}.
+
+\bibitem[STATBEL, 2022]{vehicles_in_families}
+STATBEL (2022).
+\newblock {Wagenbezit per huishouden}.
+\newblock [Online]. Last accessed on 11/11/2022. Retrieved from
+  \url{https://statbel.fgov.be/nl/themas/datalab/wagenbezit-huishouden#:~:text=37\%2C3\%25\%20heeft\%20\%C3\%A9\%C3\%A9n\%20wagen,koppels\%20met\%20een\%20inwonend\%20kind.}
+
+\bibitem[Verheyden, 2022]{privacy_breach}
+Verheyden, T. (2022).
+\newblock {Ethische hacker waarschuwt voor privacylek in parkeerapps als 4411}.
+\newblock [Online]. Last accessed on 11/11/2022. Retrieved from
+  \url{https://www.vrt.be/vrtnws/nl/2022/09/08/parkeerpapps/}.
+
+\end{thebibliography}

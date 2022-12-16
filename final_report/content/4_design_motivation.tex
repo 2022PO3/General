@@ -1,0 +1,61 @@
+\section{Design motivation}\label{sec:design-motivation}
+The design discussed in this report was not chosen without careful consideration of all options. The first decision made, was which micro controller to use. Common types of micro controllers such as a Raspberry Pi or an Arduino are readily available and are suitable for the project's needs. The Raspberry Pi 3B was used because the department had it available. \\
+
+Secondly, the detection of entering or leaving cars can be done by cameras with motion detection software. This means that the camera is constantly running and detects whether or not there is any movement. The positive side of this method is that you don't need any sensors or other extra hardware. The downside is that it might be too much to handle for the Raspberry Pi. An alternative option is working with sensors (e.g. a distance sensor) to detect the cars. This is less heavy for the Raspberry Pi, but adds an extra cost to the garage. Another option would be to leave the cameras filming and run the algorithm directly on the video footage. But this may also be too much to handle for the Raspberry Pi. Therefore, the option with the sensors is chosen for this project. \\
+
+Thirdly, the detection of available parking spaces can be done by several sensors. The most useful ones are \ac{udms} or light sensors. The latter is more expensive and doesn't offer any extra advantages over the \ac{udms}. Therefore the \ac{udms}s (\textsc{hc-sr04}) are used in this project.\\
+
+Fourthly, The backend application is written in Django, an open-source web framework, written in Python. The eventual decision was made based on the following concerns: 1) Python is known to all group members; 2) Django is a very explicit framework, which does not include a lot of magic features like Ruby on Rails does; 3) Django describes itself as the ``framework for perfectionists with deadlines'', which is exactly suited for the job \cite{django_website}. \\
+
+Lastly, the frontend application will be written in Dart, with the Flutter framework of Google. Other valid alternatives were primarily JavaScript (\ac{js})-frameworks (e.g. React or AngularJS). The main benefit for Flutter
+over the other frameworks is that it can run on any operation system (Android, iOS, MacOS, Linux, Windows,
+etc.), that it provides type safety and null safety (Dart is a strongly typed language) and that it supports
+hot reloads, which makes development much easier [Flutter, 2022]. Furthermore, two of the team members
+already worked with Flutter. \\
+
+Of course the price of the different components played also a big part in the decision making. The prices of the individual components and the total price can be found in Table \ref{tab:budget}. The leftmost column gives the name of the component used in the
+model. The second column shows how many pieces of that component are needed. Column 3 shows the price
+per piece and column 4 the total price for a specific component.
+The budget for this project is 250 euros. The design uses a total of 224,87 euros. You can see
+this in the second to last row of Table \ref{tab:budget}. This means that the limit of the budget is nearly reached with a surplus of
+25,13 euros. \newline
+
+
+\begin{table}[htp]
+    \centering
+    \caption{Final budget overview.}
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	\textbf{Component} & \textbf{Amount} & \textbf{Price/piece} & \textbf{Total} \\
+	\hline
+	\textsc{dorhea} Raspberry Pi Mini Camera & 2 & 11.95 & 23.9 \\
+	\hline
+	Ultrasonic Module Distance & 8 & 3.95 & 31.6 \\
+	\hline
+	\textsc{mdf} plates 6mm & 3 & 2.4 & 7.2 \\
+	\hline
+	Green \textsc{led} lights & 6 & 0.35 & 2.1 \\
+	\hline
+	Red \textsc{led} lights & 6 & 0.33 & 1.98 \\
+	\hline
+	Resistors & 12 & 0.2 & 2.4 \\
+	\hline
+	Raspberry Pi extension cable & 2 & 4.99 & 9.98 \\
+	\hline
+	Micro Servo Motor & 2 & 7.21 & 14.42 \\
+	\hline
+    Raspberry Pi 3B V1.2 & 2 & 59.95 & 119.9 \\
+    \hline
+    LCD-Screen & 1 & 1.49 & 1.49 \\
+    \hline
+    Jumper cables (20 pieces) & 2 & 4.95 & 9.9 \\
+    \hline
+	\multicolumn{2}{|c|}{\textbf{Total Price}} & \multicolumn{2}{c|}{224.87} \\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Remaining}} & \multicolumn{2}{c|}{25.13} \\
+
+	\hline
+\end{tabular}
+        
+    \label{tab:budget}
+\end{table}

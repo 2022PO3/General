@@ -1,0 +1,45 @@
+\section{System analysis}\label{sec:system analysis}
+This section critically analyses the \ac{ips}, discuss its strengths and weaknesses and which possible solutions could be implemented to solve some of the issues still in the system. This section is split into three parts, covering the general system, the frontend application and the  backend application.
+
+\subsection{General}
+In general the \ac{ips} does all the things that are expected of it and works as intended. However this is assuming that the user behaves as expected and follows all the guidelines set be the parking garage. To a certain extent, the users have to be trusted, which inevitably creates problems. \\
+
+ Firstly, it is currently possible to reserve a parking spot and show up several hours late or not show up at all without any repercussions. A possible solution is to implement a strike system that gives users a strike if they don't show up within a reasonable time frame. The user will get a warning stating that, if they get three strikes they wont be able to reserve parking spots for a month. \\
+
+\ind It is also assumed that people won't park in a reserved spot if the indicator \ac{led} is red. However people will probably try to do this and in the systems current state there is no check to make sure a reserved spot is still free. This would make it possible that a user could show up to the garage where they reserved a spot and there not being any free spots left. In that case, the system automatically changes the user's reservation to a parking lot that is still empty at the time of the their reservation. From the moment that all parking lots in the garage are occupied (either by a car parking on them or by a reservation) the \ac{lcd}-screen at the entrance will show that the parking garage is full. The system will then no longer allow any users inside, except for the users which made a reservation in that time period. This assures a free parking lot for users who made a reservation.
+
+\ind Secondly there are some issues with the Raspberry pi's and its connection with the backend. Due to the fact that the Raspberry Pi's aren't able to connect directly to the \ac{wifi}-network of the KU Leuven they have to connect to a hot-spot created locally which result in large delays in the communication with the backend. Often it can take up to 20 second to send the taken picture to the backend to be processed. This is slowing down the entire system. A dedicated \ac{wifi} network, setup with routers at the garage location resolves this issue.
+
+\ind Thirdly, the infrastructure at the local garage is vulnerable to vandalism and/or system malfunctions. The sensors or the \ac{anpr}-cameras can be covered and so given none or faulty signals to the backend, which renders them obsolete. Providing sufficient back-up systems and making vandalism more difficult can reduce the frequency of the problem, but never totally avoid it.
+
+\ind Fourthly, the current prototype only implements a single \ac{lcd}-screen which can show information to the user. This is insufficient and at least one extra screen is needed at the exit of the garage. If users drive to the exit barrier without having paid, it will not open. In that case, a \ac{lcd} screen showing the user exactly why the barrier will not open is indispensable. In an ideal case, the local system is will show when it could not reach the backend (see following paragraph) to inform the users about this issue.
+
+\ind Lastly, the local garage system as well as the frontend application are totally dependent on the backend for functioning correctly. If the backend becomes unreachable (either by a malfunction in the local \ac{wifi}-network or in the backend server), all the sensors in the local garage system become obsolete and the frontend application will no longer be functional. This again stresses the importance of high-availability of the backend infrastructure. Again, it is not possible to fully eliminate the chance of having a backend crash, only to reduce it by deploying several instances of the backend on multiple servers (e.g. with a container orchestration tool like Kubernetes\footnote{https://kubernetes.io/de/}) and to implement \ac{apm}-tools like Datadog\footnote{https://www.datadoghq.com/}, which would report any down-service immediately, such that appropriate actions can be taken.
+
+\subsection{Frontend}
+The main strength of the frontend application is its user-friendliness. The user can automatically pay upon leaving the garage and check the occupancy of a garage as well as reserve a spot in advance. However downloading the application and creating an account is not necessary to use the garage. a user will still be able to park but they won't be able to take advantage of the app's features.
+
+\ind One shortcoming of the system is that the user is the required internet connection in order to interact with the application. A possible solution to become less reliant on the user's internet connection is to create a caching system that stores the changes on the client device and uploads them to the backend when the user regains a internet connection.
+
+\subsection{Backend}
+Something the backend does well is focusing on security and trying to prevent unauthorised people from accessing sensitive user data. It does this in several ways. Firstly by not storing any information that is not needed and hashing sensitive user data before it is stored in the backend and secondly by making it difficult for unauthorised people to gain access to the backend, see Section \ref{subsec:sucurity}
+
+\ind The biggest shortcoming of the current backend server is the high latency for requests. This is especially detrimental for the entering and exiting system of the garage, as users have to wait in front of the barrier in order for the request to succeed. Moving the server from a local home server to a cloud based cluster of servers improves the latency and decreases the change of a server failure.
+
+
+
+
+
+
+
+% we tellen het aantal bezette parkings en niet het aantal mensen in de garage er kunnen mogelijk meer mensen binnenrijden doordat mensen nog niet op hun plek staan.
+
+% de camera is traag (hardweare probleem warschijnlijk)
+% als de backend server plat ligt staat iedereen vast => noodnummer?
+%Als camera malfunction of afgedekt wordt/vernield wordt (vandalisme) => Regular checks voor de werking van het systeem van de parkeergarage
+
+% Niet komen naar reservatie, strike-systeem => meer dan bepaald %van park niet aanwezig = strike, x aantal strikes = geen reservaties meer mogelijk
+
+%Maken van account voor nummerplaat van iemand anders om te stalken => warning-sign voor het 'als je geen account hebt en toch geen QR krijgt = let op, je wordt gestalkt' => onmogelijk om ongeweten gestalkt te worden.
+
+%Als nog niet betaald bij uitrijden, daar ter plaatse betalen. => Aansporen parkeerders om te betalen voor het navigeren naar de uitgang
