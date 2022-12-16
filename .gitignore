@@ -1,1 +1,12 @@
 *.bkp
+*.lot
+*.aux
+*.blg
+*.lof
+*.fdt_latexmk
+*.out
+*.toc
+*.fls
+*.log
+*.pdf
+*.synctex.gz
