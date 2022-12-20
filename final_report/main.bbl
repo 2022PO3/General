@@ -34,6 +34,18 @@ Docker (2022).
 \newblock [Online]. Last accessed on 23/10/2022. Retrieved from
   \url{https://docs.docker.com/compose/features-uses/}.
 
+\bibitem[DSM, 2020]{ddos_prevention}
+DSM (2020).
+\newblock {DDOS Prevention}.
+\newblock [Online]. Last accessed on 16/12/2022. Retrieved from
+  \url{https://www.dsm.net/it-solutions-blog/prevent-ddos-attacks}.
+
+\bibitem[Goodin, 2016]{ddos_attack}
+Goodin, D. (2016).
+\newblock {Record-breaking DDoS reportedly delivered by >145k hacked cameras}.
+\newblock [Online]. Last accessed on 16/12/2022. Retrieved from
+  \url{https://arstechnica.com/information-technology/2016/09/botnet-of-145k-cameras-reportedly-deliver-internets-biggest-ddos-ever/}.
+
 \bibitem[Google, 2022]{googlevision}
 Google (2022).
 \newblock {Vision AI}.
@@ -46,8 +58,8 @@ Gupta, L. (2022).
 \newblock [Online]. Last accessed on 11/11/2022. Retrieved from
   \url{https://restfulapi.net/introduction-to-json/}.
 
-\bibitem[IBM, 2022]{injection_attacks}
-IBM (2022).
+\bibitem[IBM, 2021]{injection_attacks}
+IBM (2021).
 \newblock {Injection attacks}.
 \newblock [Online]. Last accessed on 14/12/2022. Retrieved from
   \url{https://www.ibm.com/docs/en/snips/4.6.0?topic=categories-injection-attacks}.

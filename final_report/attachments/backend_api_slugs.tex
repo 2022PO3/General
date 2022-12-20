@@ -1,0 +1,124 @@
+\section{Backend API slugs}\label{app:backend-api-slugs}
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{|l|l|p{7cm}|}
+        \hline
+         \textbf{Slug} & \textbf{Methods} & \textbf{Short Description}  \\
+         \hline
+         \hline
+         \texttt{api/user} &  \texttt{GET}, \texttt{PUT}, \texttt{DELETE} & Get, update or delete user information.\\
+        \hline
+        \texttt{api/user/change-password} &  \texttt{PUT} & Update a user's password, provided the old one.\\
+        \hline
+        \texttt{api/garages} &  \texttt{GET}, \texttt{POST}& Get all the available garages or post a new one.\\
+        \hline
+        \texttt{api/garage/<int:pk>} &  \texttt{GET}, \texttt{PUT}, \texttt{DELETE
+        } & Get, update or delete information about a single garage.\\
+        \hline
+        \texttt{api/prices/<int:pk>} &  \texttt{GET}, \texttt{POST}, 
+         & Get all the prices for a garage with id \texttt{pk} or post a new one.\\
+        \hline
+        \texttt{api/price/<int:pk>} &  \texttt{GET}, \texttt{PUT}, \texttt{DELETE}, 
+         & Get, update or delete a price with id \texttt{pk}.\\
+        \hline
+        \texttt{api/opening-hours/<int:pk>} &  \texttt{GET}, \texttt{POST} & Get all the opening hours for a garage with id \texttt{pk} or add a new one.\\
+        \hline
+        \texttt{api/opening-hour/<int:pk>} & \texttt{GET}, \texttt{PUT}, \texttt{DELETE} & Get, update or delete opening hours with id \texttt{pk}.\\
+        \hline
+        \texttt{api/parking-lots/<int:pk>} &  \texttt{GET}, \texttt{POST} & Get all the parking lots for a garage with id \texttt{pk} or post a new one.\\
+        \hline
+        \texttt{api/parking-lot/<int:pk>} &  \texttt{GET}, \texttt{PUT}, \texttt{DELETE
+        } & Get update or delete a parking lot with id \texttt{pk}. \\
+        \hline
+        \texttt{api/assign-parking-lot/<int:pk>} &  \texttt{GET} & Get a random free parking lot in the garage with id \texttt{pk}, given a start and end date. \\
+        \hline
+        \texttt{api/garage-settings/<int:pk>} &  \texttt{GET}, \texttt{PUT}, \texttt{DELETE
+        } & Get, update or delete the garage settings of a garage with id \texttt{pk}.\\
+        \hline
+        \texttt{api/licence-plates} &  \texttt{GET}, \texttt{POST} & Get all licence plates for a user or add a new one.\\
+        \hline
+        \texttt{api/licence-plate/<int:pk>} &  \texttt{GET}, \texttt{PUT}, \texttt{DELETE} & Get, update or delete a licence plate with id \texttt{pk}. \\
+        \hline
+        \texttt{api/reservations} &  \texttt{GET}, \texttt{POST} & Get all user's reservations or add a new one.\\
+        \hline
+        \texttt{api/reservation/<int:pk>} &  \texttt{GET}, \texttt{PUT}, \texttt{DELETE
+        } & Get, update or delete a reservation with id \texttt{pk}.\\
+        \hline
+        \texttt{api/notifications/<int:pk>} &  \texttt{GET} & Get all user's notifications.\\
+        \hline
+        \texttt{api/notification/<int:pk>} &  \texttt{PUT}, \texttt{DELETE
+        } & Update or delete a notification with id \texttt{pk}.\\
+        \hline
+        \end{tabular}
+    \caption{Overview of all general \ac{url} slugs which are supported by the backend application.}
+    \label{tab:general-url}
+\end{table}
+
+
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{|l|l|p{7cm}|}
+    \hline
+    \textbf{Slug} & \textbf{Methods} & \textbf{Short Description}  \\
+    \hline
+    \hline
+        \texttt{api/auth/login} &  \texttt{POST} & Login a user given a email and password.\\
+        \hline
+        \texttt{api/auth/logout} &  \texttt{POST} & Logout a user, deleting its auth token.\\
+        \hline
+        \texttt{api/auth/activate-account} &  \texttt{GET} & Activate a user's account.\\
+        \hline
+        \texttt{api/auth/totp/disable} &  \texttt{POST} & Disable \ac{2fa} for a user.\\
+        \hline
+        \texttt{api/auth/totp} &  \texttt{GET}, \texttt{POST} & Get all the user's \ac{totp}-devices or add a new one.\\
+        \hline
+        \texttt{api/auth/totp/<int:pk>} &  \texttt{PUT}, \texttt{DELETE} & Update or delete a \ac{totp}-device with id \texttt{pk}.\\
+        \hline
+        \texttt{api/auth/totp/login/<int:code>} & \texttt{POST} & Post the \ac{2fa}-code to verify the user (\texttt{code} is a six-digit number).\\
+        \hline
+    \end{tabular}
+    \caption{Overview of all \ac{url} slugs for authentication which are supported by the backend application.}
+    \label{tab:auth-url}
+\end{table}
+
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|l|l|p{7cm}|}
+        \hline
+    \textbf{Slug} & \textbf{Methods} & \textbf{Short Description}  \\
+    \hline
+        \hline
+        \texttt{api/rpi/images} &  \texttt{POST} & Post the image taken by the Raspberry Pi to the backend for image analysis.\\
+        \hline
+        \texttt{api/rpi/parking-lot} &  \texttt{GET} & Get the parking lots from the garage where the Raspberry Pi is installed.\\
+        \hline
+            \end{tabular}
+    \caption{Overview of all \ac{url} slugs for the local garage system, which are supported by the backend application.}
+    \label{tab:url-rpi}
+\end{table}
+
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|l|l|p{7cm}|}
+        \hline
+    \textbf{Slug} & \textbf{Methods} & \textbf{Short Description}  \\
+    \hline
+        \hline
+        \texttt{api/checkout/create-session} &  \texttt{POST} & Create a checkout session for the user to pay.\\
+        \hline
+        \texttt{api/checkout/preview} &  \texttt{GET} & Get the items which the user has to pay (i.e. time quantities parked).\\
+        \hline
+        \texttt{api/checkout/webhook} &  \texttt{POST} & Listen to incoming requests from the Stripe servers for checkout updates.\\
+        \hline
+        \texttt{api/stripe-connection} &  \texttt{POST}, \texttt{DELETE} & Add or remove customers from Stripe.\\
+        \hline
+        \texttt{api/invoice/webhook} &  \texttt{GET} & Listen to invoice updates from the Stripe servers.\\
+        \hline
+    \end{tabular}
+    \caption{Overview of all \ac{url} slugs for payment which are supported by the backend application.}
+    \label{tab:url-payment}
+\end{table}
+
+\clearpage

@@ -1,0 +1,89 @@
+\section{App pages}\label{app:app-pages}
+\begin{table}
+\centering
+         \caption[An overview of all the different pages in the frontend application.]{An overview of all the different pages in the frontend application, together with their page code and a short description.}
+        \label{tab:app-pages}
+
+\begin{tabular}{|p{2cm}|p{4cm}|p{9cm}|}
+
+         \hline
+         \textbf{Page code}& \textbf{Page name} & \textbf{Short description} \\
+         \hline
+         \hline
+         0a & Login page & Lets the user enter their email and password and authenticates it with the backend.\\
+         \hline         
+         0b & Register page & Allows the creation of new accounts by inputting all necessary information by the user.\\
+         \hline 
+         0c & \ac{2fa} Page & Allows the user to enter the \ac{2fa}-code from their \ac{totp}-device. \\
+         \hline 
+         \hline
+         1 & Home page & Central page in the application which is the entry point for all major flows.\\
+         \hline 
+         1a & Home banner & Banner which allows the user to navigate to all important flows and to sign out. \\
+         \hline 
+         \hline
+         2 & Garage info page & Provides an overview of all information about a garage, including its occupancy, prices and opening hours. Is the entry point for the reservation flow.\\
+         \hline 
+         2a & Licence plate selection page & Allows the user to select for which licence plate they want to make a reservation. \\
+         \hline 
+         2b & Make reservation page & Allows the user to enter their start and end time of the reservation they want to make. Validates them before continuing. \\
+         \hline 
+         2c & Spot selection page & Allows the user to choose a parking lot for which they want to make a reservation. \\
+         \hline 
+         2d & Reservation overview page &  Provides an overview of the reservation the user is about to make. On confirm, the user is redirected to the home page \\
+         \hline 
+         \hline
+         3 & Settings page & Entry point for the users altering the user settings. \\
+         \hline 
+         3a & Two factor devices page & Allows the user to add, update or delete \ac{totp}-devices. \\
+         \hline 
+         3b & Add automatic payment page& Allows the user to enter their credit card details, which enables automatic payment.\\
+         \hline 
+         \hline
+         4 & User reservation page & Overview of the user's reservations, highlighting the current reservation and disabling past reservations.\\
+         \hline 
+         \hline
+         5 & Profile page & Entry point for altering and viewing user information. \\
+         \hline 
+         5a & Licence plates page & Allows the user to view, add and confirm licence plates. \\
+         \hline 
+         5b & Confirm licence plate dialog& Allows the user to choose to enable their licence plate. \\
+         \hline 
+         5b1 & Registration explication page & Explains the user why a vehicle registration document is necessary for the application to enable their licence plate.\\
+         \hline 
+         5c & Confirm licence plate page & Allows the user to upload a vehicle registration document to enable their licence plate. \\
+         \hline 
+         5d & User info page & Allows the user to view and edit their personal information. \\
+         \hline 
+         5d1 & User deletion pop up & Allows the user to choose if they want to delete their account. \\
+         \hline 
+         5d2 & Change password page & Allows the user to change their password by entering a new one. \\
+         \hline
+         5d3 & Change province page & Allows the user to change their location.\\
+         \hline 
+         \hline
+         6 & Garage settings page & Allows a garage owner to alter the information about their garage, including the parking lots, prices, opening hours and location. \\
+         \hline 
+         6a & Add prices page & Allows a garage owner to add new prices to their garage. The prices will be synchronised with the Stripe servers.\\
+         \hline
+         6b & Add garage page & Allows a garage owner to add a new garage to the system. This page also allows to add opening hours, prices and a location to the garage.\\
+         \hline 
+    \end{tabular}
+\end{table}
+\clearpage
+
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{|p{2cm}|p{4cm}|p{9cm}|}
+         \hline
+         7 & Checkout page & Provides an overview of the due amount and the parked time to the user.\\
+         \hline 
+         7a & Payment page & Allows the user to pay their parking bill. \\
+         \hline 
+         7a1 & Payment success page & Provides confirmation to the user that their payment was successful. \\
+         \hline 
+         7a2 & Payment failed page page & Provides confirmation to the user that their payment was unsuccessful. \\
+         \hline
+    \end{tabular}
+\end{table}
+\clearpage

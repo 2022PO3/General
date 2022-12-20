@@ -8,7 +8,8 @@
 %%% ---------------- %%%
 
 \usepackage[english]{babel}   % Spellingcorrectie en titels in NL
-\usepackage{graphicx}       % Pakket voor afbeeldingen
+\usepackage[pdftex]{graphicx}       % Pakket voor afbeeldingen
+\usepackage{longtable}
 \usepackage[colorlinks, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
 \usepackage{geometry}       % Pakket voor pagina-indeling
 \geometry{tmargin=3cm, bmargin=2.2cm, lmargin=2.2cm, rmargin=2cm}
@@ -44,13 +45,17 @@
 \input{acronyms}
 
 \usepackage{tocloft}
+\usepackage{comment}
 
 \newlength{\mylen}
 \setlength{\mylen}{5px}
 
+\newlength{\figlen}
+\setlength{\figlen}{10px}
+
 \renewcommand{\cftfigpresnum}{\figurename\enspace}
 \renewcommand{\cftfigaftersnum}{:}
-\settowidth{\mylen}{\cftfigpresnum\cftfigaftersnum}
+\settowidth{\figlen}{\cftfigpresnum\cftfigaftersnum}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \addtolength{\cftfignumwidth}{25px}
 
@@ -65,6 +70,7 @@
 \newcommand{\ind}{\hspace{1.2em}}
 
 \usepackage{titlesec}
+\usepackage{float}
 \usepackage[labelfont=bf,format=hang]{caption}
 \captionsetup{labelfont=bf}
 
@@ -114,6 +120,22 @@
 \input{content/7_conclusion.tex}
 \input{content/8_course_integration.tex}
 
-\input{attachments.tex}
+\begin{appendices}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}\makeatletter
+\addtocontents{toc}{%
+  \begingroup
+  \let\protect\l@chapter\protect\l@section
+  \let\protect\l@section\protect\l@subsection
+}
+\makeatother
 
+\input{attachments/general_deployment_diagram.tex}
+\input{attachments/app_diagrams.tex}
+\input{attachments/app_pages.tex}
+\input{attachments/mechanical_part_list.tex}
+\input{attachments/backend_api_slugs.tex}
+\input{attachments/sequence_diagrams.tex}
+\input{attachments/flowcharts.tex}
+
+\end{appendices}
 \end{document}
