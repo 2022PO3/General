@@ -1,0 +1,108 @@
+
+\documentclass[a4paper,10pt]{article}
+
+%%% ---------------- %%%
+% LaTeX heeft een zekere basisfunctionaliteit maar meestal is deze onvoldoende. Daarvoor bestaan er bijkomende pakketten.
+%
+% P.S. In een regel is alles na '%' een opmerking. Deze worden niet opgenomen bij compilatie van het document.
+%%% ---------------- %%%
+
+\usepackage[english]{babel}   % Spellingcorrectie en titels in NL
+\usepackage{graphicx}       % Pakket voor afbeeldingen
+\usepackage[colorlinks, linkcolor=black, citecolor=black, urlcolor=black]{hyperref}
+\usepackage{geometry}       % Pakket voor pagina-indeling
+\geometry{tmargin=3cm, bmargin=2.2cm, lmargin=2.2cm, rmargin=2cm}
+\usepackage{todonotes}      % Pakket voor figuur 'placeholders'
+\usepackage{subcaption}
+\usepackage{ifthen}
+\usepackage{enumitem}
+\usepackage{amsmath}        % Pakket voor vergelijkingen
+\usepackage{floatrow}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{hhline}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{backgroundcolor=\color{backcolour},  language=Matlab }
+\lstset{style=mystyle}
+\floatsetup[table]{capposition=top}     % Pakket dat bovenschriften creëert bij tabellen ipv de standaard onderschriften.
+\usepackage{float}
+\usepackage{svg}
+\usepackage{wasysym}
+\usepackage{framed}
+\usepackage{lscape}
+\usepackage{array}
+\usepackage{bold-extra}
+\newcommand{\textbox}[2][6]{
+\begin{framed}
+\noindent#2
+\end{framed}}
+\usepackage[toc,page]{appendix}
+
+\usepackage{acro}
+\input{acronyms}
+
+\usepackage{tocloft}
+
+\newlength{\mylen}
+\setlength{\mylen}{5px}
+
+\renewcommand{\cftfigpresnum}{\figurename\enspace}
+\renewcommand{\cftfigaftersnum}{:}
+\settowidth{\mylen}{\cftfigpresnum\cftfigaftersnum}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\addtolength{\cftfignumwidth}{25px}
+
+\renewcommand{\cfttabpresnum}{\tablename\enspace}
+\renewcommand{\cfttabaftersnum}{:}
+\settowidth{\mylen}{\cfttabpresnum\cfttabaftersnum}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\addtolength{\cfttabnumwidth}{25px}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+\setlength\parindent{1em}
+\newcommand{\ind}{\hspace{1.2em}}
+
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+\begin{document}
+\input{titlepage}
+\input{originality_declaration}
+
+\addcontentsline{toc}{section}{Contents}
+\tableofcontents
+\clearpage
+
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures
+
+\clearpage
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables
+
+\clearpage
+\addcontentsline{toc}{section}{List of Acronyms}
+\acsetup{format/short=\MakeUppercase}
+\printacronyms[name=List of Abbreviations]
+\acsetup{format/short=\scshape}
+
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\newpage
+
+
+\input{template.tex} 
+\input{attachments.tex}
+
+\end{document}
